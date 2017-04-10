@@ -1,6 +1,6 @@
 {
     "name": "sturnus",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "make multi-threaded programming easier",
     "main": "main/index.js",
     "scripts": {

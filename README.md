@@ -18,11 +18,11 @@ With *sturnus*, execuating in a forked process is almost as easy as normal async
 
 You may run the next example by:  
 ```bash
-# Install with devDependencies.
-npm install sturnus
-
 # Change to the package's directory.
 cd node_modules/sturnus
+
+# Install with devDependencies.
+npm install
 
 # Run test command.
 npm test
