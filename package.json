@@ -1,0 +1,28 @@
+{
+    "name": "sturnus",
+    "version": "0.0.1",
+    "description": "make multi-threaded programming easier",
+    "main": "main/index.js",
+    "scripts": {
+        "test": "node test/test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/YounGoat/nodejs.sturnus.git"
+    },
+    "keywords": [
+        "multi-thread",
+        "mutil-process",
+        "cluster",
+        "IPC"
+    ],
+    "author": "youngoat@163.com",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/YounGoat/nodejs.sturnus/issues"
+    },
+    "homepage": "https://github.com/YounGoat/nodejs.sturnus#readme",
+    "devDependencies": {
+        "uglify-js": "^2.4.15"
+    }
+}
