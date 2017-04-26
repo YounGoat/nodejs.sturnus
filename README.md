@@ -2,6 +2,8 @@
 
 __Make multi-processes programming easier.__  
 
+[![NPM](https://nodei.co/npm/sturnus.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/sturnus)
+
 [Sturnus](https://en.wikipedia.org/wiki/Sturnus) is a genus of starlings, the birds commonly living in groups.
 
 JavaScript is known as single-threaded, which makes things easier to understand and control. However, most computers we using today have more than 2 CPU cores. While a single-threaded program running, only one CPU core is working and the others are idle. Built-in module [cluster](https://nodejs.org/dist/latest-v7.x/docs/api/cluster.html) of Node.js will help us to take adventage of multi-core systems. Package *sturnus* is just based on cluster module.
