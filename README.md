@@ -4,8 +4,6 @@ __Make multi-processes programming easier.__
 
 [![NPM](https://nodei.co/npm/sturnus.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/sturnus)
 
-[Sturnus](https://en.wikipedia.org/wiki/Sturnus) is a genus of starlings, the birds commonly living in groups.
-
 JavaScript is known as single-threaded, which makes things easier to understand and control. However, most computers we using today have more than 2 CPU cores. While a single-threaded program running, only one CPU core is working and the others are idle. Built-in module [cluster](https://nodejs.org/dist/latest-v7.x/docs/api/cluster.html) of Node.js will help us to take adventage of multi-core systems. Package *sturnus* is just based on cluster module.
 
 To install *sturnus* as dependency of your package, please add ``--only=prod`` to prevent the devDependencies from being installed:  
@@ -14,7 +12,7 @@ To install *sturnus* as dependency of your package, please add ``--only=prod`` t
 npm install sturnus --only=prod --save
 ```
 
-##	Multi-threaded Programming with sturnus
+##	Get Started, Multi-threaded Programming with sturnus
 
 With *sturnus*, execuating in a forked process is almost as easy as normal asynchronous calling, execept that __passed parameters and returned values SHOULD BE SERIALIZABLE__.
 
@@ -114,3 +112,7 @@ To execute some task.
 ###	sturnus.terminate()
 
 To terminate all the sub processes forked by *sturnus*. If some sub processes are not idle, *sturnus* will keep waiting till them finishes their current tasks.
+
+##	About
+
+[Sturnus](https://en.wikipedia.org/wiki/Sturnus) is a genus of starlings, the birds commonly living in groups.
