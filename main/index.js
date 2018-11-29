@@ -16,17 +16,31 @@ var MODULE_REQUIRE
 	, Worker = require('./worker')
 	;
 
-// 任务集群。
-function Cluster(jspath) {
+/**
+ * 任务集群。
+ * 
+ * @param {string} options - Regarded as the path of js file.
+ * 
+ * @param {Object} options
+ * @param {string} options.js
+ * @param {number} options.workers
+ */
+function Cluster(options) {
 	events.EventEmitter.call(this);
 
-	var CPU_COUNT = os.cpus().length;
+	if (typeof options == 'string') {
+		options = { js: options };
+	}
+
+	options = Object.assign({
+		workers: os.cpus().length,
+	}, options);
 	var that = this;
 
 	this._queue = [];
 	this._workers = [];
-	for (var i = 0; i < CPU_COUNT; i++) {
-		this._workers[i] = new Worker(jspath);
+	for (var i = 0; i < options.workers; i++) {
+		this._workers[i] = new Worker(options.js);
 
 		// 监听进程的 idle 事件。
 		// 当进程空闲时，若队列中有等候任务，则执行该任务。

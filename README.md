@@ -77,7 +77,8 @@ Attentions to next things:
 var Sturnus = require('sturnus');
 
 // Create instance by supplying pathname of the extended worker javascript file.
-var sturnus = new Sturnus( path.join(__dirname, 'extended_worker.js') );
+var jspath = path.join(__dirname, 'extended_worker.js');
+var sturnus = new Sturnus(jspath);
 
 // Execute task.
 sturnus.exec('minify', __filename, function(err, js) {
@@ -101,17 +102,20 @@ Certainly, what we want is not just to run tasks in forked process one by one. T
 
 ##	API
 
-###	new Sturnus(jspath)
+*	class __Sturnus__(Object *options*)  
+	To create an instance of *sturnus* management.
 
-To create an instance of *sturnus* management.
+	*	string *options.js*
+	*	number *options.workers*
 
-###	sturnus.exec(taskname [, args ...] [, callback])
+*	class __Sturnus__(string *jspath*)  
+	Downward compatible style of `new Sturnus({ js })`.
 
-To execute some task.
+*	__\<sturnus\>.exec__(*taskname* [, *args* ...] [, *callback*])  
+	To execute some task.
 
-###	sturnus.terminate()
-
-To terminate all the sub processes forked by *sturnus*. If some sub processes are not idle, *sturnus* will keep waiting till them finishes their current tasks.
+*	__\<sturnus\>.terminate__()  
+	To terminate all the sub processes forked by *sturnus*. If some sub processes are not idle, *sturnus* will keep waiting till them finishes their current tasks.
 
 ##	About
 
