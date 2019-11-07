@@ -13,7 +13,7 @@ var MODULE_REQUIRE
 	/* NPM */
 
 	/* in-package */
-	, Worker = require('./worker')
+	, Worker = require('./Worker')
 	;
 
 /**
@@ -24,6 +24,8 @@ var MODULE_REQUIRE
  * @param {Object} options
  * @param {string} options.js
  * @param {number} options.workers
+ * @param {object} options.env
+ * @param {object} options.stdio
  */
 function Cluster(options) {
 	events.EventEmitter.call(this);
@@ -39,8 +41,14 @@ function Cluster(options) {
 
 	this._queue = [];
 	this._workers = [];
+
+	var workerOptions = {
+		env: options.env,
+		stiod: options.stdio,
+	};
+
 	for (var i = 0; i < options.workers; i++) {
-		this._workers[i] = new Worker(options.js);
+		this._workers[i] = new Worker(options.js, workerOptions);
 
 		// 监听进程的 idle 事件。
 		// 当进程空闲时，若队列中有等候任务，则执行该任务。

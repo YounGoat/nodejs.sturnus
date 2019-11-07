@@ -14,6 +14,8 @@ worker.on('minify', function(script, options, callback) {
 		options = null;
 	}
 
+	console.log('JOB', process.env.JOB);
+
 	try {
 		var result = UglifyJS.minify(script, options);
 		setTimeout(function() {

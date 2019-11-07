@@ -107,6 +107,10 @@ Certainly, what we want is not just to run tasks in forked process one by one. T
 
 	*	string *options.js*
 	*	number *options.workers*
+	*	object *options.env*		
+	*	Array | string *options.stdio*
+
+	See [Child Processes](https://nodejs.org/docs/latest/api/child_process.html#child_process_child_process_spawn_command_args_options) for details about `options.env` and `options.stdio`.
 
 *	class __Sturnus__(string *jspath*)  
 	Downward compatible style of `new Sturnus({ js })`.

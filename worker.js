@@ -29,8 +29,6 @@ var worker = {};
  * 启动消息接收功能，进程可以接收来自父进程的消息，并调用相应的方法处理数据。
  */
 worker.start = function() {
-	var self = this;
-
 	process.on('message', function(msg) {
 		// 消息由管理进程传递给任务进程，管理进程确保消息格式为一个数组，且首项为任务名。
 		var taskname = msg[0];
